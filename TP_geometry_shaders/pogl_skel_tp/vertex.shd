@@ -4,6 +4,7 @@ in vec3 position;
 in vec3 normalSmooth;
 
 out vec3 color;
+out vec3 gs_normal[3];
 
 vec3 light_color = vec3(1.0, 1.0, 1.0);
 vec3 light_position = vec3(-10.0, -10.0, -50.0);
