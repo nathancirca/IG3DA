@@ -26,6 +26,12 @@ int main(int argc, char **argv)
     Delaunay::Finite_cells_iterator vit; //An iterator variable that can iterate over the Delaunay cells (tetrahedrons)
     for(vit=T.finite_cells_begin();vit!=T.finite_cells_end();vit++) //Do for each cell. T.finite_cells_begin() gives a starting tetrahedron, ++ moves to next tetrahedron, T.finite_cells_end() gives the final tetrahedron ** This loop is just to give an idea about how to access cells and vertices, it is not required in the program
     	std::cout<<vit->vertex(0)->point()<<" "<<vit->vertex(1)->point()<<" "<<vit->vertex(2)->point()<<" "<<vit->vertex(3)->point()<<"\n"; //Printing the vertex coordinates of 4 points of the tetrahedron
+        for(int i=0; i<4; i++){
+            // https://cral-perso.univ-lyon1.fr/labo/fc/Ateliers_archives/ateliers_2005-06/cercle_3pts.pdf
+            x1 = 
+            float a = -()
+        }
+
     //TODO: Apply Delaunay filtering (take each Delaunay face [have a look at Delaunay facets as well - https://doc.cgal.org/latest/Triangulation_3/index.html], and check whether it satisfies the requirement)
     //Hint: You can use CGAL::circumcenter() to compute the circumcenters of a Triangle/Cell
     //TODO: Save the result into an STL file
