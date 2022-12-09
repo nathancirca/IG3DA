@@ -100,7 +100,9 @@ public:
     _tex = mesh.vertexTexCoords();
 
     // TODO: initialize physical variables _v, _f, _w
-    _v = 
+    _v = 0;
+    _f = 2*_g;
+    _w = 1/2;
 
     // TODO: create constraints
 
