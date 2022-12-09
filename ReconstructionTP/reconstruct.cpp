@@ -28,8 +28,19 @@ int main(int argc, char **argv)
     	std::cout<<vit->vertex(0)->point()<<" "<<vit->vertex(1)->point()<<" "<<vit->vertex(2)->point()<<" "<<vit->vertex(3)->point()<<"\n"; //Printing the vertex coordinates of 4 points of the tetrahedron
         for(int i=0; i<4; i++){
             // https://cral-perso.univ-lyon1.fr/labo/fc/Ateliers_archives/ateliers_2005-06/cercle_3pts.pdf
-            x1 = 
-            float a = -()
+            x1 = vertex[i]->point();
+            x2 = vertex[(i+1)/4]->point();
+            x3 = vertex[(i+2)/4]->point();
+            Vector3f ac = x3 - x1 ;
+            Vector3f ab = x2 - x1 ;
+            Vector3f abXac = ab.cross( ac ) ;
+
+            // this is the vector from a TO the circumsphere center
+            Vector3f toCircumsphereCenter = (abXac.cross( ab )*ac.len2() + ac.cross( abXac )*ab.len2()) / (2.f*abXac.len2()) ;
+            float circumsphereRadius = toCircumsphereCenter.len() ;
+
+            // The 3 space coords of the circumsphere center then:
+            Vector3f ccs = a  +  toCircumsphereCenter ;
         }
 
     //TODO: Apply Delaunay filtering (take each Delaunay face [have a look at Delaunay facets as well - https://doc.cgal.org/latest/Triangulation_3/index.html], and check whether it satisfies the requirement)
